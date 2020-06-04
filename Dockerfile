@@ -31,7 +31,7 @@ RUN cd danmuSlideServer
 CMD ["/bin/bash", "npm install"]
 
 
-RUN npm install pm2 -g
+#RUN npm install pm2 -g
 EXPOSE 3000
-#CMD ["/bin/bash", "/root/.nvm/versions/node/v14.4.0/bin/node", "index.js"]
-CMD ["pm2-runtime", "index.js"]
+CMD ["/bin/bash", "-c", "/root/.nvm/versions/node/v14.4.0/bin/node", "index.js"]
+#MD ["pm2-runtime", "index.js"]
