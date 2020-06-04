@@ -30,4 +30,4 @@ RUN git clone https://github.com/liu946/danmuSlideServer.git
 RUN cd danmuSlideServer
 CMD ["/bin/bash", "npm install"]
 
-CMD ["node index.js"]
+CMD ["/root/.nvm/versions/node/v14.4.0/bin/node", "index.js"]
