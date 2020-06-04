@@ -25,7 +25,7 @@ RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | b
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 RUN source ~/.bashrc  
-RUN nvm install node 
+CMD ["/bin/bash", "node install node"]
 RUN git clone https://github.com/liu946/danmuSlideServer.git
 RUN cd danmuSlideServer
 RUN npm install
