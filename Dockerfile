@@ -3,7 +3,7 @@ FROM       ubuntu:18.04
 
 RUN apt-get update
 
-RUN apt-get install -y openssh-server git curl
+RUN apt-get install -y openssh-server git wget
 RUN mkdir /var/run/sshd
 
 RUN echo 'root:root' |chpasswd
@@ -20,7 +20,7 @@ EXPOSE 22
 
 CMD    ["/usr/sbin/sshd", "-D"]
 
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+RUN wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
