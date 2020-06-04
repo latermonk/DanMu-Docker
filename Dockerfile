@@ -28,6 +28,6 @@ RUN source ~/.bashrc
 CMD ["/bin/bash", "nvm install node"]
 RUN git clone https://github.com/liu946/danmuSlideServer.git
 RUN cd danmuSlideServer
-RUN npm install
+CMD ["/bin/bash", "npm install"]
 
 CMD ["node index.js"]
