@@ -22,7 +22,7 @@ CMD    ["/usr/sbin/sshd", "-D"]
 
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 
-RUN rm /bin/sh && ln -s /bin/bash /bin/sh
+RUN rm /bin/bash && ln -s /bin/bash /bin/sh
 
 RUN source ~/.bashrc  
 RUN nvm install node 
