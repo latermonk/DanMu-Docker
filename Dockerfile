@@ -1,5 +1,5 @@
 FROM       ubuntu:18.04
-MAINTAINER Aleksandar Diklic "https://github.com/rastasheep"
+#MAINTAINER Aleksandar Diklic "https://github.com/rastasheep"
 
 RUN apt-get update
 
@@ -30,4 +30,4 @@ RUN git clone https://github.com/liu946/danmuSlideServer.git
 RUN cd danmuSlideServer
 CMD ["/bin/bash", "npm install"]
 
-CMD ["/root/.nvm/versions/node/v14.4.0/bin/node", "index.js"]
+CMD ["/bin/bash", "/root/.nvm/versions/node/v14.4.0/bin/node", "index.js"]
