@@ -30,5 +30,8 @@ RUN git clone https://github.com/liu946/danmuSlideServer.git
 RUN cd danmuSlideServer
 CMD ["/bin/bash", "npm install"]
 
+
+RUN npm install pm2 -g
 EXPOSE 3000
-CMD ["/bin/bash", "/root/.nvm/versions/node/v14.4.0/bin/node", "index.js"]
+#CMD ["/bin/bash", "/root/.nvm/versions/node/v14.4.0/bin/node", "index.js"]
+CMD ["pm2-runtime", "index.js"]
