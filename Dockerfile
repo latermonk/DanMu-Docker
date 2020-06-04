@@ -3,7 +3,7 @@ MAINTAINER Aleksandar Diklic "https://github.com/rastasheep"
 
 RUN apt-get update
 
-RUN apt-get install -y openssh-server git
+RUN apt-get install -y openssh-server git curl
 RUN mkdir /var/run/sshd
 
 RUN echo 'root:root' |chpasswd
@@ -21,6 +21,9 @@ EXPOSE 22
 CMD    ["/usr/sbin/sshd", "-D"]
 
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
+
 RUN source ~/.bashrc  
 RUN nvm install node 
 RUN git clone https://github.com/liu946/danmuSlideServer.git
